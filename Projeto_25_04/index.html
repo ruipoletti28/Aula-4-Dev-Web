@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Menu de Opções</title>
+	<script type="text/javascript">
+		// Função para incrementar o contador de visitantes
+		function incrementarContador() {
+			if (typeof(Storage) !== "undefined") {
+				if (sessionStorage.visitas) {
+					sessionStorage.visitas = Number(sessionStorage.visitas)+1;
+				} else {
+					sessionStorage.visitas = 1;
+				}
+				document.getElementById("contador").innerHTML = "Visitantes: " + sessionStorage.visitas;
+			} else {
+				document.getElementById("contador").innerHTML = "Sem suporte a Storage";
+			}
+		}
+	</script>
+</head>
+<body onload="incrementarContador()">
+	<h1>Menu de Opções</h1>
+	<p id="contador"></p>
+	<ul>
+		<li><a href="gravar.php">Gravar Dados dos Alunos</a></li>
+		<li><a href="apresentar.php">Apresentar Dados dos Alunos</a></li>
+	</ul>
+</body>
+</html>
